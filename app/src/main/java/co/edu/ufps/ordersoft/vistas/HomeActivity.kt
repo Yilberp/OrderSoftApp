@@ -3,7 +3,7 @@ package co.edu.ufps.ordersoft.vistas
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Button
+import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -18,7 +18,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     lateinit var mDrawerLayout: DrawerLayout
     lateinit var navigationView: NavigationView
     lateinit var imagen: ImageView
-    lateinit var menu: Button
+    lateinit var menu: ImageButton
     //    lateinit var toolbar: Toolbar
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,12 +26,16 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         //UI
         mDrawerLayout = findViewById(R.id.drawer_layout)
         navigationView = findViewById(R.id.nav_view)
+        menu = findViewById(R.id.menu_navigation)
 //        toolbar = findViewById(R.id.topAppBar)
         getSupportFragmentManager().beginTransaction().add(R.id.content, HomeFragment()).commit()
         setTitle("Home")
 //
         //Setup toolbar
 //        setSupportActionBar(toolbar)
+        menu.setOnClickListener{
+            toggle()
+        }
 
 //        toolbar.setNavigationOnClickListener{
 //            toggle()
