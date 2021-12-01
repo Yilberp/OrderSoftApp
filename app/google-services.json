@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "76266932853",
+    "project_id": "ordersoftapp",
+    "storage_bucket": "ordersoftapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:76266932853:android:e18c53e4937c706b51c63c",
+        "android_client_info": {
+          "package_name": "co.edu.ufps.ordersoft"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "76266932853-l112emhlgrtpq02rfd5qi2e5jgeskpo4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBA_5JTy0TAnpcEy8euNctqFhztvI_Oi1A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "76266932853-l112emhlgrtpq02rfd5qi2e5jgeskpo4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

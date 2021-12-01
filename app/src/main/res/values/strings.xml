@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">OrderSoft</string>
+    <string name="login">Log In</string>
+    <string name="Signup">Sign Up</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="user">Enter email or username</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="fb">Facebook</string>
+    <string name="logo">OrderSoft</string>
+    <string name="Profile">Profile</string>
+    <string name="Order">Orders</string>
+    <string name="Pay">Payments methods</string>
+    <string name="Address">Addresses</string>
+    <string name="Home">Home</string>
+</resources>

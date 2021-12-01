@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="@string/Home"
+            android:icon="@drawable/ic_baseline_home_24"
+            android:checked="true"/>
+        <item
+            android:id="@+id/nav_profile"
+            android:title="@string/Profile"
+            android:icon="@drawable/ic_baseline_account_circle_24" />
+        <item
+            android:id="@+id/nav_orders"
+            android:title="@string/Order"
+            android:icon="@drawable/ic_baseline_assignment_24"/>
+        <item
+            android:id="@+id/nav_payment"
+            android:title="@string/Pay"
+            android:icon="@drawable/ic_baseline_credit_card_24"/>
+        <item
+            android:id="@+id/nav_address"
+            android:title="@string/Address"
+            android:icon="@drawable/ic_baseline_place_24"/>
+    </group>
+</menu>
