@@ -15,7 +15,11 @@
             android:id="@+id/menu_navigation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_menu_24"
+            android:padding="10dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ic_grupo_37"
+            android:background="@android:color/transparent"
             />
 <!--        <include-->
 <!--            layout="@layout/toolbar"-->

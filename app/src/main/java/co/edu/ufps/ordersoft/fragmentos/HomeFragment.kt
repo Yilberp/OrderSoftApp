@@ -5,9 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
+import android.widget.LinearLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import co.edu.ufps.ordersoft.Adapter.AdapterCategories
+//import android.widget.ImageView
 import co.edu.ufps.ordersoft.R
-import com.bumptech.glide.Glide
+import co.edu.ufps.ordersoft.entity.Category
+
+//import com.bumptech.glide.Glide
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,7 +29,9 @@ class HomeFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    private lateinit var image: ImageView
+    private  lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: AdapterCategories
+//    private lateinit var image: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -38,14 +46,35 @@ class HomeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         var view = inflater.inflate(R.layout.fragment_home, container, false)
-        image = view.findViewById(R.id.image_profile_bar)
-        var url: String = "https://pbs.twimg.com/media/FFaEtv3XwAQLcdg?format=jpg&name=medium"
-        Glide.with(this).load(url)
-            .placeholder(R.drawable.ic_baseline_account_circle_24)
-            .error(R.drawable.ic_baseline_account_circle_24)
-            .circleCrop()
-            .into(image)
+        recyclerView = view.findViewById(R.id.contenedor_categories)
+        val LinearLayout = LinearLayoutManager(context)
+        LinearLayout.orientation = LinearLayoutManager.HORIZONTAL
+        recyclerView.layoutManager = LinearLayout
+        adapter = AdapterCategories(context, cargarDatos(), R.id.card)
+        recyclerView.adapter = adapter
+
+//        image = view.findViewById(R.id.image_profile_bar)
+//        var url: String = "https://pbs.twimg.com/media/FFaEtv3XwAQLcdg?format=jpg&name=medium"
+//        Glide.with(this).load(url)
+//            .placeholder(R.drawable.ic_baseline_account_circle_24)
+//            .error(R.drawable.ic_baseline_account_circle_24)
+//            .circleCrop()
+//            .into(image)
         return view
+    }
+
+    private fun cargarDatos(): ArrayList<Category> {
+        val categories: ArrayList<Category> = java.util.ArrayList()
+        categories.add(
+            Category("1","Burgers",R.drawable.ic_burger)
+        )
+        categories.add(
+            Category("2","Pizza",R.drawable.ic_fast_food)
+        )
+        categories.add(
+            Category("3","Chicken",R.drawable.ic_chicken)
+        )
+        return categories
     }
 
     companion object {
