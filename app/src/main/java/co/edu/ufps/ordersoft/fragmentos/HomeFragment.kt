@@ -5,13 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import co.edu.ufps.ordersoft.Adapter.AdapterCategories
-//import android.widget.ImageView
+import co.edu.ufps.ordersoft.Adapter.AdapterItems
 import co.edu.ufps.ordersoft.R
 import co.edu.ufps.ordersoft.entity.Category
+import co.edu.ufps.ordersoft.entity.Item
 
 //import com.bumptech.glide.Glide
 
@@ -31,7 +32,9 @@ class HomeFragment : Fragment() {
     private var param2: String? = null
     private  lateinit var recyclerView: RecyclerView
     private lateinit var adapter: AdapterCategories
-//    private lateinit var image: ImageView
+    private  lateinit var recyclerViewItem: RecyclerView
+    private lateinit var adapterItem: AdapterItems
+    private lateinit var btnItem: CardView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -52,15 +55,28 @@ class HomeFragment : Fragment() {
         recyclerView.layoutManager = LinearLayout
         adapter = AdapterCategories(context, cargarDatos(), R.id.card)
         recyclerView.adapter = adapter
+        //items
+        recyclerViewItem = view.findViewById(R.id.contenedor_items)
+        val LinearLayout2 = LinearLayoutManager(context)
+        LinearLayout2.orientation = LinearLayoutManager.HORIZONTAL
+        recyclerViewItem.layoutManager = LinearLayout2
+        adapterItem = AdapterItems(context, cargarItems(), R.id.card_item)
+        recyclerViewItem.adapter = adapterItem
 
-//        image = view.findViewById(R.id.image_profile_bar)
-//        var url: String = "https://pbs.twimg.com/media/FFaEtv3XwAQLcdg?format=jpg&name=medium"
-//        Glide.with(this).load(url)
-//            .placeholder(R.drawable.ic_baseline_account_circle_24)
-//            .error(R.drawable.ic_baseline_account_circle_24)
-//            .circleCrop()
-//            .into(image)
+
+
         return view
+    }
+
+    private fun cargarItems(): ArrayList<Item> {
+        val items: ArrayList<Item> = java.util.ArrayList()
+        items.add(
+            Item("1","Zinger Burger",R.drawable.grupo_26,12)
+        )
+        items.add(
+            Item("2","Chicken Burger",R.drawable.checken_burger,15)
+        )
+        return items
     }
 
     private fun cargarDatos(): ArrayList<Category> {

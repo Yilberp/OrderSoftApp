@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="co.edu.ufps.ordersoft">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,9 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OrderSoft">
         <activity
+            android:name=".vistas.ProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".vistas.LoginActivity"
-            android:theme="@style/SplashTheme"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,10 +26,8 @@
         </activity>
         <activity
             android:name=".vistas.HomeActivity"
-            android:theme="@style/AppTheme"/>
-        <activity
-            android:name=".MainActivity">
-        </activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

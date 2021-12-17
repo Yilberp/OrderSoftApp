@@ -18,4 +18,12 @@
     <string name="search">Search for a food item</string>
     <string name="categories">Categories</string>
     <string name="content_description_media">Categories</string>
+    <string name="Burgers">Burgers</string>
+    <string name="btn_back">atras</string>
+    <string name="first_name">Nombres</string>
+    <string name="last_name">Apellidos</string>
+    <string name="cc">Cedula</string>
+    <string name="email">Email</string>
+    <string name="phone">Celular</string>
+    <string name="save">Guardar</string>
 </resources>
