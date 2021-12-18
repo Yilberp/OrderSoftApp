@@ -7,12 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import co.edu.ufps.ordersoft.Adapter.AdapterCategories
 import co.edu.ufps.ordersoft.Adapter.AdapterItems
 import co.edu.ufps.ordersoft.R
 import co.edu.ufps.ordersoft.entity.Category
 import co.edu.ufps.ordersoft.entity.Item
+import me.relex.circleindicator.CircleIndicator2
 
 //import com.bumptech.glide.Glide
 
@@ -63,6 +65,12 @@ class HomeFragment : Fragment() {
         adapterItem = AdapterItems(context, cargarItems(), R.id.card_item)
         recyclerViewItem.adapter = adapterItem
 
+        //circle indicator
+        val pSnap: PagerSnapHelper = PagerSnapHelper()
+        pSnap.attachToRecyclerView(recyclerViewItem)
+
+        val indicator: CircleIndicator2 = view.findViewById(R.id.indicator)
+        indicator.attachToRecyclerView(recyclerViewItem, pSnap)
 
 
         return view
@@ -75,6 +83,12 @@ class HomeFragment : Fragment() {
         )
         items.add(
             Item("2","Chicken Burger",R.drawable.checken_burger,15)
+        )
+        items.add(
+            Item("3","Zinger Burger",R.drawable.grupo_26,12)
+        )
+        items.add(
+            Item("4","Chicken Burger",R.drawable.checken_burger,15)
         )
         return items
     }

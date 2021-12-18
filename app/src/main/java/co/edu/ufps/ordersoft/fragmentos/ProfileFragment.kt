@@ -5,7 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.ImageView
+import androidx.fragment.app.FragmentManager
 import co.edu.ufps.ordersoft.R
+import com.bumptech.glide.Glide
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +25,8 @@ class ProfileFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private lateinit var imagen: ImageView
+    private lateinit var btnBack: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +41,20 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        val view = inflater.inflate(R.layout.fragment_profile, container, false)
+        imagen = view.findViewById(R.id.image_profile)
+        val url: String = "https://pbs.twimg.com/media/FFaEtv3XwAQLcdg?format=jpg&name=medium"
+        Glide.with(this).load(url)
+            .placeholder(R.drawable.ic_baseline_account_circle_24)
+            .error(R.drawable.ic_baseline_account_circle_24)
+            .circleCrop()
+            .into(imagen)
+        btnBack = view.findViewById(R.id.btn_back)
+        btnBack.setOnClickListener {
+            val fm: FragmentManager? = activity?.supportFragmentManager
+            fm?.popBackStack()
+        }
+        return view
     }
 
     companion object {

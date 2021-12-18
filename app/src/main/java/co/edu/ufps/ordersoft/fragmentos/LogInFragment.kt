@@ -85,6 +85,7 @@ class LogInFragment : Fragment() {
     private fun irHome() {
         val intent = Intent(context, HomeActivity::class.java)
         startActivity(intent)
+        activity?.finish()
     }
     companion object {
         /**

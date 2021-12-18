@@ -12,9 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OrderSoft">
         <activity
-            android:name=".vistas.ProfileActivity"
-            android:exported="false" />
-        <activity
             android:name=".vistas.LoginActivity"
             android:exported="true"
             android:theme="@style/SplashTheme">

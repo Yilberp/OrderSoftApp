@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.fragment.app.FragmentManager
 import androidx.viewpager.widget.ViewPager
 import co.edu.ufps.ordersoft.vistas.HomeActivity
 import co.edu.ufps.ordersoft.vistas.MyAdapter
@@ -47,5 +48,15 @@ class MainActivity : AppCompatActivity() {
             }
 
         })
+    }
+    override fun onBackPressed() {
+        val fm: FragmentManager = supportFragmentManager
+        if (fm.backStackEntryCount == 0){
+            super.onBackPressed()
+        }else if (fm.backStackEntryCount == 1){
+            moveTaskToBack(false)
+        }else{
+            fm.popBackStack()
+        }
     }
 }

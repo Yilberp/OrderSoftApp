@@ -63,25 +63,24 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
-
     private fun selectItemNav(item: MenuItem) {
         val fm: FragmentManager = supportFragmentManager
         val ft: FragmentTransaction = fm.beginTransaction()
         when (item.itemId) {
             R.id.nav_home -> {
-                ft.replace(R.id.content, HomeFragment()).commit()
+                ft.replace(R.id.content, HomeFragment()).addToBackStack(null).commit()
             }
             R.id.nav_profile -> {
-                ft.replace(R.id.content, ProfileFragment()).commit()
+                ft.replace(R.id.content, ProfileFragment()).addToBackStack(null).commit()
             }
             R.id.nav_orders -> {
-                ft.replace(R.id.content, OrdersFragment()).commit()
+                ft.replace(R.id.content, OrdersFragment()).addToBackStack(null).commit()
             }
             R.id.nav_payment -> {
-                ft.replace(R.id.content, PaymentFragment()).commit()
+                ft.replace(R.id.content, PaymentFragment()).addToBackStack(null).commit()
             }
             R.id.nav_address -> {
-                ft.replace(R.id.content, AddressFragment()).commit()
+                ft.replace(R.id.content, AddressFragment()).addToBackStack(null).commit()
             }
             else -> selectItemNav(item)
         }
