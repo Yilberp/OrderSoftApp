@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OrderSoft">
         <activity
+            android:name=".vistas.ItemDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".vistas.LoginActivity"
             android:exported="true"
             android:theme="@style/SplashTheme">
@@ -24,7 +27,7 @@
         <activity
             android:name=".vistas.HomeActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
